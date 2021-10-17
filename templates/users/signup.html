@@ -1,0 +1,19 @@
+{% extends 'users/base.html' %}
+
+{% block head_content %}
+<title>Platzigram signup</title>
+{% endblock %}
+
+{% block container %}
+
+
+    <form method="POST" action="{% url 'users:signup' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button class="btn btn-primary btn-block mt-5" type="submit">
+            Sing up
+        </button>
+    </form>
+{% endblock  %}
